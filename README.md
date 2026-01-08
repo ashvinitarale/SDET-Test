@@ -7,7 +7,7 @@ It follows **industry best practices** such as:
 - **Page Object Model (POM)** for clean and maintainable tests
 - **Fixtures** for external test data
 - **Module-based folder structure** for scalability and readability
-- **Custom Commands** Code resuse, more efficient, easir to maintain
+- **Custom Commands** Code resuse, more efficient, easier to maintain
 ---
 ## Project Structure
 ```bash
