@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import loginPage from "../../support/pages/loginPage";
+import checkoutPage from "../../support/pages/checkoutPage";
+Cypress.Commands.add('loginWithStandradUser', () => {
+    // Login with standard user credentials
+    cy.fixture('loginData').then((loginData) => {
+        loginPage.login(loginData.usrname, loginData.password)
+    })
+})
+
+Cypress.Commands.add('enterCustomerData', () => {
+    // Enter user details
+    cy.fixture('customerData').then((customerData) => {
+        checkoutPage.getfirstName().type(customerData.firstName);
+        checkoutPage.getsecondName().type(customerData.lastName);
+        checkoutPage.getzipcode().type(customerData.zipcode);
+    })
+
+})
